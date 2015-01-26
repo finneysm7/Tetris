@@ -1,7 +1,5 @@
 require 'rspec'
-require 'tetris'
-require 'piece'
-require 'board'
+require 'game'
 
 
 describe "Game" do

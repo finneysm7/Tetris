@@ -23,7 +23,7 @@ class Piece
   end
   
   def right
-    @squares.each do |square|
+    @squares.reverse.each do |square|
       @board[square.pos] = nil
       square.pos[1] += 1
       @board.place(square)
@@ -37,7 +37,6 @@ class Piece
       @board.place(square)
     end
   end
-  
 end
 
 class Square
@@ -46,6 +45,10 @@ class Square
   
   def initialize(pos)
     @pos = pos
+  end
+  
+  def display_value
+    "[ ]"
   end
   
 end

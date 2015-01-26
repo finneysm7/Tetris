@@ -52,6 +52,7 @@ describe "Piece" do
     
     it "should take the square off the board" do
       expect(piece.board[[0,4]]).to eq(nil)
+      expect(piece.board[[0,5]]).to eq(piece.squares[0])
     end
   end
   
@@ -68,6 +69,16 @@ describe "Piece" do
     it "should take the square off the board" do
       expect(piece.board[[0,4]]).to eq(nil)
       expect(piece.board[[0,5]]).to eq(nil)
+    end
+  end
+end
+
+describe "Square" do
+  let(:square) {Square.new([0,0])}
+  
+  context "#display_value" do
+    it "displays a value" do
+      expect(square.display_value).to eq("[ ]")
     end
   end
 end

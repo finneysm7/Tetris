@@ -30,4 +30,25 @@ class Board
     end
     return true
   end
+  
+  def display
+    @grid.each_with_index do |row, idx|
+      display_grid = []
+      row.each_with_index do |cell, j|
+        if cell == nil
+          display_grid << ' - '
+        else
+          display_grid << cell.display_value
+        end
+      end
+      display_grid.each do |square|
+        print square
+      end
+      
+      print "\n"
+    end
+    print "\n"
+    
+    sleep(0.15)
+  end
 end
